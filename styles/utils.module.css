@@ -43,6 +43,11 @@
     margin: 0;
 }
 
+.menu {
+    text-align: center;
+    font-size:x-large;
+}
+
 .listItem {
     margin: 0 0 1.25rem;
 }

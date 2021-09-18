@@ -6,7 +6,7 @@ import utilStyles from "../styles/utils.module.css";
 export default function contatti() {
     return (
         <Layout children>
-            <section className={utilStyles.listItem}>
+            <section className={utilStyles.menu}>
                 <p>
                     <Link href="gente">
                         <a>Gente</a>
@@ -22,17 +22,18 @@ export default function contatti() {
                     Contatti
                 </title>
             </Head>
-            <h1>Contatti:</h1>
             <p>
+                <h1>Contatti:</h1>
                 Per scriverci un email{' '}
                 <Link href="mailto:ciao@senzapelisullalinguistica.it">
                     <a>clicca qui</a>
                 </Link>
                 .
-            </p>
-            <p>
-                Social:
-
+                <br />
+                <h2>
+                    Social:
+                </h2>
+                in arrivo
             </p>
         </Layout>
     )

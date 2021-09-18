@@ -1,15 +1,27 @@
 import Head from 'next/head'
 import Link from "next/link";
-import Layout, {siteTitle} from '../components/layout'
+import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
+import { getSortedPostsData } from '../lib/posts'
+import { rss } from '../lib/rssFeed';
 
-export default function Home() {
+export async function getStaticProps() {
+    const allPostsData = getSortedPostsData()
+    const allRssFeed = await rss()
+    // console.log(allRssFeed.items)
+    return {
+        props: {
+            allPostsData,
+            allRssFeed: JSON.stringify(allRssFeed.items)
+        }
+    }
+}
+
+export default function Home({ allPostsData, allRssFeed }) {
+    const parsedAllRssFeed = JSON.parse(allRssFeed)
     return (
         <Layout home>
-            <Head>
-                <title>{siteTitle}</title>
-            </Head>
-            <section className={utilStyles.listItem}>
+            <section className={utilStyles.menu}>
                 <p>
                     <Link href="gente">
                         <a>Gente</a>
@@ -20,6 +32,9 @@ export default function Home() {
                     </Link>
                 </p>
             </section>
+            <Head>
+                <title>{siteTitle}</title>
+            </Head>
             <section className={utilStyles.headingMd}>
                 <p>Il podcast sulla scienza delle lingue e del linguaggio.</p>
                 <p>
@@ -38,20 +53,39 @@ export default function Home() {
                         href="https://www.google.com/podcasts?feed=aHR0cHM6Ly9hbmNob3IuZm0vcy82NTgwYmI2OC9wb2RjYXN0L3Jzcw==">
                         <a>Google Podcasts{' '}</a>
                     </Link>
-                    e{' '}
+                    oppure{' '}
                     <Link
                         href="https://pca.st/nslk66ca">
                         <a>PocketCasts</a>
                     </Link>
                     .
                 </p>
-                <p>Per ulteriori piattaforme di ascolto{' '}
-                    <Link
-                        href="https://anchor.fm/senzapelisullalinguistica">
-                        <a>clicca qui</a>
-                    </Link>
-                    .
-                </p>
+            </section>
+            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+                <h2 className={utilStyles.headingLg}>Episodi</h2>
+                <ul className={utilStyles.list}>
+                    {parsedAllRssFeed.map(({ title, itunes_season, itunes_episode, link }) => (
+                        <li className={utilStyles.listItem} key={title}>
+                            Stagione 0{itunes_season}, episodio 0{itunes_episode}:{' '}
+                            <a href={link}>{title}</a>
+                            <br />
+                        </li>
+                    ))}
+                </ul>
+            </section>
+            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+                <h2 className={utilStyles.headingLg}>Blog</h2>
+                <ul className={utilStyles.list}>
+                    {allPostsData.map(({ id, date, title }) => (
+                        <li className={utilStyles.listItem} key={id}>
+                            {title}
+                            <br />
+                            {id}
+                            <br />
+                            {date}
+                        </li>
+                    ))}
+                </ul>
             </section>
         </Layout>
     )
