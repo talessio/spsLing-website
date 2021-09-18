@@ -14,6 +14,7 @@ export default function Home() {
                     <Link href="gente">
                         <a>Gente</a>
                     </Link>
+                    {' '}
                     <Link href="contatti">
                         <a>Contatti</a>
                     </Link>
