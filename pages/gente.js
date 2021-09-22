@@ -6,17 +6,6 @@ import utilStyles from "../styles/utils.module.css";
 export default function gente() {
     return (
         <Layout children>
-            <section className={utilStyles.menu}>
-                <p>
-                    <Link href="gente">
-                        <a>Gente</a>
-                    </Link>
-                    {' '}
-                    <Link href="contatti">
-                        <a>Contatti</a>
-                    </Link>
-                </p>
-            </section>
             <Head>
                 <title>
                     Gente

@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Link from "next/link";
+import Link from 'next/link'
+import Date from '../components/date'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
@@ -21,27 +22,18 @@ export default function Home({ allPostsData, allRssFeed }) {
     const parsedAllRssFeed = JSON.parse(allRssFeed)
     return (
         <Layout home>
-            <section className={utilStyles.menu}>
-                <p>
-                    <Link href="gente">
-                        <a>Gente</a>
-                    </Link>
-                    {' '}
-                    <Link href="contatti">
-                        <a>Contatti</a>
-                    </Link>
-                </p>
-            </section>
             <Head>
-                <title>{siteTitle}</title>
+                <title>
+                    {siteTitle}
+                </title>
             </Head>
             <section className={utilStyles.headingMd}>
-                <p>Il podcast sulla scienza delle lingue e del linguaggio.</p>
                 <p>
+                    Il podcast sulla scienza delle lingue e del linguaggio.<br />
                     Ascolta su{' '}
                     <Link
                         href="https://podcasts.apple.com/us/podcast/senza-peli-sulla-linguistica/id1581076544">
-                        <a>Apple Podcasts{' '}</a>
+                        <a>Apple Podcasts</a>
                     </Link>
                     ,{' '}
                     <Link
@@ -65,10 +57,14 @@ export default function Home({ allPostsData, allRssFeed }) {
                 <h2 className={utilStyles.headingLg}>Episodi</h2>
                 <ul className={utilStyles.list}>
                     {parsedAllRssFeed.map(({ title, itunes_season, itunes_episode, link }) => (
-                        <li className={utilStyles.listItem} key={title}>
-                            Stagione 0{itunes_season}, episodio 0{itunes_episode}:{' '}
-                            <a href={link}>{title}</a>
+                        <li className={utilStyles.listItem} key={itunes_season}>
+                            <Link href={link}>
+                                <a>{title}</a>
+                            </Link>
                             <br />
+                            <small className={utilStyles.lightText}>
+                                Stagione 0{itunes_season}, episodio 0{itunes_episode}
+                            </small>
                         </li>
                     ))}
                 </ul>
@@ -78,11 +74,13 @@ export default function Home({ allPostsData, allRssFeed }) {
                 <ul className={utilStyles.list}>
                     {allPostsData.map(({ id, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            {title}
+                            <Link href={`/posts/${id}`}>
+                                <a>{title}</a>
+                            </Link>
                             <br />
-                            {id}
-                            <br />
-                            {date}
+                            <small className={utilStyles.lightText}>
+                                <Date dateString={date} />
+                            </small>
                         </li>
                     ))}
                 </ul>

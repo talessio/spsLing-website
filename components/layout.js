@@ -12,7 +12,7 @@ export default function Layout({children, home}) {
         <div className={styles.container}>
             <Head>
                 <link rel="icon" href="/favicon.ico"/>
-                <meta
+                {/* <meta
                     name="description"
                     content="Learn how to build a personal website using Next.js"
                 />
@@ -21,9 +21,9 @@ export default function Layout({children, home}) {
                     content={`https://og-image.vercel.app/${encodeURI(
                         siteTitle
                     )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-                />
+                /> */}
                 <meta name="og:title" content={siteTitle}/>
-                <meta name="twitter:card" content="summary_large_image"/>
+                {/* <meta name="twitter:card" content="summary_large_image"/> */}
             </Head>
             <header className={styles.header}>
                 {home ? (
@@ -59,6 +59,17 @@ export default function Layout({children, home}) {
                         </h2>
                     </>
                 )}
+                <section className={utilStyles.menu}>
+                <p>
+                    <Link href="gente">
+                        <a>Gente</a>
+                    </Link>
+                    {' '}
+                    <Link href="contatti">
+                        <a>Contatti</a>
+                    </Link>
+                </p>
+            </section>
             </header>
             <main>{children}</main>
             {!home && (
