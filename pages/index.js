@@ -78,9 +78,9 @@ export default function Home({ allPostsData, allRssFeed }) {
                                 <a>{title}</a>
                             </Link>
                             <br />
-                            <small className={utilStyles.lightText}>
+                            {/* <small className={utilStyles.lightText}>
                                 <Date dateString={date} />
-                            </small>
+                            </small> */}
                         </li>
                     ))}
                 </ul>

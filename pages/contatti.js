@@ -15,10 +15,18 @@ export default function contatti() {
                 <Link href="mailto:ciao@senzapelisullalinguistica.it">
                     <a>clicca qui</a>
                 </Link>
-                .
+                {' '}oppure mandaci un messaggio sui social.
                 <br />
                 <h2>Social</h2>
-                In arrivo!
+                spsLing è (moderatamente) attivo su
+                <Link href="instagram.com/spsLinguistica">
+                    <a>Instagram</a>
+                </Link>
+                {' '}e{' '}
+                <Link href="twitter.com/spsLinguistica">
+                    <a>Twitter</a>
+                </Link>
+                {' '}come spsLinguistica. Postiamo cose diverse sulle due piattaforme, perciò per leggere tutte le nostre hot takes e tutti i temi che non trovano spazio nel podcast seguiteci su entrambe!
             </p>
         </Layout>
     )
