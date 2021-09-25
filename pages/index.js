@@ -20,6 +20,8 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData, allRssFeed }) {
     const parsedAllRssFeed = JSON.parse(allRssFeed)
+    console.log('aaaaaaa', allPostsData)
+
     return (
         <Layout home>
             <Head>
@@ -72,17 +74,19 @@ export default function Home({ allPostsData, allRssFeed }) {
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>
                 <ul className={utilStyles.list}>
-                    {allPostsData.map(({ id, date, title }) => (
+                    {allPostsData.map(({ id, date, title }) =>{ 
+                        // console.log(id, date, title)
+                        return (
                         <li className={utilStyles.listItem} key={id}>
                             <Link href={`/posts/${id}`}>
                                 <a>{title}</a>
                             </Link>
                             <br />
-                            {/* <small className={utilStyles.lightText}>
+                            <small className={utilStyles.lightText}>
                                 <Date dateString={date} />
-                            </small> */}
+                            </small>
                         </li>
-                    ))}
+                    )})}
                 </ul>
             </section>
         </Layout>
