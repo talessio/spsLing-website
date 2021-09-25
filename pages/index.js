@@ -20,8 +20,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData, allRssFeed }) {
     const parsedAllRssFeed = JSON.parse(allRssFeed)
-    console.log('aaaaaaa', allPostsData)
-
+    // console.log('aaaaaaa', allPostsData)
     return (
         <Layout home>
             <Head>
