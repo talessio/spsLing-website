@@ -18,12 +18,12 @@ export default function contatti() {
                 {' '}oppure mandaci un messaggio sui social.
                 <br />
                 <h2>Social</h2>
-                spsLing è (moderatamente) attivo su
-                <Link href="instagram.com/spsLinguistica">
+                spsLing è (moderatamente) attivo su{' '}
+                <Link href="https://www.instagram.com/spslinguistica/">
                     <a>Instagram</a>
                 </Link>
                 {' '}e{' '}
-                <Link href="twitter.com/spsLinguistica">
+                <Link href="https://twitter.com/spsLinguistica">
                     <a>Twitter</a>
                 </Link>
                 {' '}come spsLinguistica. Postiamo cose diverse sulle due piattaforme, perciò per leggere tutte le nostre hot takes e tutti i temi che non trovano spazio nel podcast seguiteci su entrambe!
