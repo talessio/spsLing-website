@@ -38,7 +38,7 @@ export default function Home({ allPostsData, allRssFeed }) {
                     </Link>
                     ,{' '}
                     <Link
-                        href="https://open.spotify.com/show/4pnxmP1G7Nqv15yw0MPWTF" className="link">
+                        href="https://open.spotify.com/show/4pnxmP1G7Nqv15yw0MPWTF">
                         <a>Spotify</a>
                     </Link>
                     ,{' '}
