@@ -1,10 +1,14 @@
 {
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
     {
-        "name": "Launch Program",
-        "request": "launch",
-        "type": "pwa-node",
-        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next"
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to application",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "port": 9229
     }
-    ]
+  ]
 }
