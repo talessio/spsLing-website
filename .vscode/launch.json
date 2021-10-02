@@ -1,0 +1,10 @@
+{
+    "configurations": [
+    {
+        "name": "Launch Program",
+        "request": "launch",
+        "type": "pwa-node",
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/next"
+    }
+    ]
+}
