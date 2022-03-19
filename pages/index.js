@@ -14,7 +14,8 @@ export async function getStaticProps() {
         props: {
             allPostsData,
             allRssFeed: JSON.stringify(allRssFeed.items)
-        }
+        },
+        revalidate: 10
     }
 }
 
