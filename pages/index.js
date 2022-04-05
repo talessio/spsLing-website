@@ -9,13 +9,13 @@ import { rss } from '../lib/rssFeed';
 export async function getStaticProps() {
     const allPostsData = getSortedPostsData()
     const allRssFeed = await rss()
-    // console.log(allRssFeed.items)
+    console.log(allRssFeed.items)
     return {
         props: {
             allPostsData,
             allRssFeed: JSON.stringify(allRssFeed.items)
         },
-        revalidate: 10
+        revalidate: 10,
     }
 }
 
@@ -74,19 +74,20 @@ export default function Home({ allPostsData, allRssFeed }) {
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>
                 <ul className={utilStyles.list}>
-                    {allPostsData.map(({ id, date, title }) =>{ 
+                    {allPostsData.map(({ id, date, title }) => {
                         // console.log(id, date, title)
                         return (
-                        <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/posts/${id}`}>
-                                <a>{title}</a>
-                            </Link>
-                            <br />
-                            <small className={utilStyles.lightText}>
-                                <Date dateString={date} />
-                            </small>
-                        </li>
-                    )})}
+                            <li className={utilStyles.listItem} key={id}>
+                                <Link href={`/posts/${id}`}>
+                                    <a>{title}</a>
+                                </Link>
+                                <br />
+                                <small className={utilStyles.lightText}>
+                                    <Date dateString={date} />
+                                </small>
+                            </li>
+                        )
+                    })}
                 </ul>
             </section>
         </Layout>
