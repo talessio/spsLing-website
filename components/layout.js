@@ -50,11 +50,11 @@ export default function Layout({children, home}) {
                 )}
                 <section className={utilStyles.menu}>
                 <p>
-                    <Link href="gente">
+                    <Link href="/gente">
                         <a>Gente</a>
                     </Link>
                     {' '}
-                    <Link href="contatti">
+                    <Link href="/contatti">
                         <a>Contatti</a>
                     </Link>
                 </p>
