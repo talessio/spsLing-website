@@ -4,30 +4,32 @@ import Layout from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 
 export default function contatti() {
-    return (
-        <Layout children>
-            <Head>
-                <title>Contatti</title>
-            </Head>
-            <p>
-                <h1>Contatti</h1>
-                Per scriverci un email{' '}
-                <Link href="mailto:ciao@senzapelisullalinguistica.it">
-                    <a>clicca qui</a>
-                </Link>
-                {' '}oppure mandaci un messaggio sui social.
-                <br />
-                <h2>Social</h2>
-                spsLing è (moderatamente) attivo su{' '}
-                <Link href="https://www.instagram.com/spslinguistica/">
-                    <a>Instagram</a>
-                </Link>
-                {' '}e{' '}
-                <Link href="https://twitter.com/spsLinguistica">
-                    <a>Twitter</a>
-                </Link>
-                {' '}come spsLinguistica. Postiamo cose diverse sulle due piattaforme, perciò per leggere tutte le nostre hot takes e tutti i temi che non trovano spazio nel podcast seguiteci su entrambe!
-            </p>
-        </Layout>
-    )
+  return (
+    <Layout children>
+      <Head>
+        <title>Contatti</title>
+      </Head>
+      <p>
+        <h1>Contatti</h1>
+        Per scriverci un email{" "}
+        <Link href="mailto:ciao@senzapelisullalinguistica.it">
+          <a>clicca qui</a>
+        </Link>{" "}
+        oppure mandaci un messaggio sui social.
+        <br />
+        <h2>Social</h2>
+        spsLing è (moderatamente) attivo su{" "}
+        <Link href="https://www.instagram.com/spslinguistica/">
+          <a>Instagram</a>
+        </Link>{" "}
+        e{" "}
+        <Link href="https://twitter.com/spsLinguistica">
+          <a>Twitter</a>
+        </Link>{" "}
+        come spsLinguistica. Postiamo cose diverse sulle due piattaforme, perciò
+        per leggere tutte le nostre hot takes e tutti i temi che non trovano
+        spazio nel podcast seguiteci su entrambe!
+      </p>
+    </Layout>
+  );
 }
