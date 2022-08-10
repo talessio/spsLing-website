@@ -14,7 +14,7 @@ export default function contatti() {
         Per contattare spsLing, manda un messaggio sui nostri social:
         <br />
         <h2>Social</h2>
-        spsLing è (moderatamente) attivo su{" "}
+        Siamo (moderatamente) attivi su{" "}
         <Link href="https://www.instagram.com/spslinguistica/">
           <a>Instagram</a>
         </Link>{" "}
@@ -22,9 +22,11 @@ export default function contatti() {
         <Link href="https://twitter.com/spsLinguistica">
           <a>Twitter</a>
         </Link>{" "}
-        come spsLinguistica. Postiamo cose diverse sulle due piattaforme, perciò
-        per leggere tutte le nostre hot takes e tutti i temi che non trovano
-        spazio nel podcast seguiteci su entrambe!
+        come spsLinguistica.
+        <br />
+        Postiamo cose diverse sulle due piattaforme, perciò per leggere tutte le
+        nostre hot takes e tutti i temi che non trovano spazio nel podcast
+        seguiteci su entrambe!
       </p>
     </Layout>
   );
