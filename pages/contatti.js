@@ -11,11 +11,7 @@ export default function contatti() {
       </Head>
       <p>
         <h1>Contatti</h1>
-        Per scriverci un email{" "}
-        <Link href="mailto:ciao@senzapelisullalinguistica.it">
-          <a>clicca qui</a>
-        </Link>{" "}
-        oppure mandaci un messaggio sui social.
+        Per contattare spsLing, manda un messaggio sui nostri social:
         <br />
         <h2>Social</h2>
         spsLing è (moderatamente) attivo su{" "}
