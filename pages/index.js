@@ -59,7 +59,7 @@ export default function Home({ allPostsData, allRssFeed }) {
                 </Link>
                 <br />
                 <small className={utilStyles.lightText}>
-                  Episodio {itunes_episode}
+                  Stagione 0{itunes_season}, episodio 0{itunes_episode}
                 </small>
               </li>
             )
